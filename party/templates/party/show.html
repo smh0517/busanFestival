@@ -1,0 +1,11 @@
+{% load static %}
+<body>
+    <h1>축제지도</h1>
+    
+    <img src='/static/2022main.jpg'>
+
+    {% for item in my_data %}
+        <h3>{{item.id}} / {{item.name}}</h3>
+    {%endfor%}
+    
+</body>
