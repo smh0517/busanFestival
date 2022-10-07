@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse" >
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="https://www.youtube.com/watch?v=gySTfYBTv9M">🌈</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav" >
+        <li class="active"><a href="/index/">홈</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">축제정보
+            <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="{% url "location:place" %}?gu=기장">기장군</a></li>
+              <li><a href="{% url "location:place" %}?gu=강서">강서구</a></li>
+              <li><a href="{% url "location:place" %}?gu=금정">금정구</a></li>
+              <li><a href="{% url "location:place" %}?gu=남구">남구</a></li>
+              <li><a href="{% url "location:place" %}?gu=동구">동구</a></li>
+              <li><a href="{% url "location:place" %}?gu=동래">동래구</a></li>
+              <li><a href="{% url "location:place" %}?gu=부산진">부산진구</a></li>
+              <li><a href="{% url "location:place" %}?gu=북구">북구</a></li>
+              <li><a href="{% url "location:place" %}?gu=사상">사상구</a></li>
+              <li><a href="{% url "location:place" %}?gu=사하">사하구</a></li>
+              <li><a href="{% url "location:place" %}?gu=서구">서구</a></li>
+              <li><a href="{% url "location:place" %}?gu=수영">수영구</a></li>
+              <li><a href="{% url "location:place" %}?gu=연제">연제구</a></li>
+              <li><a href="{% url "location:place" %}?gu=영도">영도구</a></li>
+              <li><a href="{% url "location:place" %}?gu=중구">중구</a></li>
+              <li><a href="{% url "location:place" %}?gu=해운대">해운대구</a></li>
+            </ul>
+          </li>
+
+          
+        <li><a href="/map/">위치</a></li>
+
+        <li><a href="/contact/">연락</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+{% block content %}
+{% endblock %}
+
+<footer class="container-fluid text-center">
+  <p> 출처 : 공공데이터 포털, 부산관광 포털, 부산광역시 공식 유튜브 </p>
+  <p> BIG DATA    ANALYST   COURSE    MINI    PROJECCT </p>
+  <p>nahyun KANG / hyebin PARK / yupin SEO / mihyeon SON </p>
+</footer>
+
+</body>
+</html>

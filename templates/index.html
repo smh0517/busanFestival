@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="jumbotron" style="background-color:cornsilk">
+  <div class="container text-center" >
+    <h1 style="font-family: Lucida Handwriting";> 🎆Welcome to Busan Festival 🎆</h1>      
+    
+  </div>
+</div>
+
+<div class="container-fluid bg-3 text-center">    
+  {% load static %}   
+  <img src="https://www.visitbusan.net/upload_data/board_data/BBS_0000007/165094079870422.jpg" class="img-responsive" style="width:100%" alt="Image">
+<br>  
+  <div class="row">
+    <div class="col-sm-3">
+      <img src="https://www.visitbusan.net/uploadImgs/files/cntnts/20191222160520749_thumbL" class="img-responsive" style="width:100%" alt="Image">
+      <b>태종대 수국축제</b>
+    </div>
+    <div class="col-sm-3"> 
+      <img src="https://www.visitbusan.net/uploadImgs/files/cntnts/20191231095147364_thumbL" class="img-responsive" style="width:100%" alt="Image">
+      <b>다대포 바다미술제</b>
+    </div>
+    <div class="col-sm-3"> 
+      <img src="https://www.visitbusan.net/uploadImgs/files/cntnts/20191230180157336_thumbL" class="img-responsive" style="width:100%" alt="Image">
+      <b>광안리 불꽃축제</b>
+    </div>
+    <div class="col-sm-3">
+      <img src="https://www.visitbusan.net/uploadImgs/files/cntnts/20191231183718043_thumbL" class="img-responsive" style="width:100%" alt="Image">
+      <b>남포동 트리축제</b>
+    </div>
+  </div>
+</div><br><br>
+
+
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=8bbbe88dd7364852effa2498c8da5762"></script>
+<script>
+  navigator.geolocation.getCurrentPosition( (position) => {
+    const latitude = position.coords.latitude;
+    const longitude = position.coords.longitude;
+
+    var container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
+    var options = { //지도를 생성할 때 필요한 기본 옵션
+      center: new kakao.maps.LatLng(latitude, longitude), //지도의 중심좌표.(위도,경도)
+      level: 3 //지도의 레벨(확대, 축소 정도)
+    };
+    var map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
+
+  } );
+</script>
+
+{% endblock %}
